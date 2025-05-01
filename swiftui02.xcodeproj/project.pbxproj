@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		32DCF4182DC0D6CC0067684F /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 32DCF4172DC0D6CC0067684F /* RiveRuntime */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		326C10FA2DA565E00057254D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DCF4182DC0D6CC0067684F /* RiveRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = swiftui02;
 			packageProductDependencies = (
+				32DCF4172DC0D6CC0067684F /* RiveRuntime */,
 			);
 			productName = swiftui02;
 			productReference = 326C10EB2DA565DE0057254D /* swiftui02.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 326C10E22DA565DE0057254D;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				32DCF4162DC0D6CC0067684F /* XCRemoteSwiftPackageReference "rive-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 326C10EC2DA565DE0057254D /* Products */;
 			projectDirPath = "";
@@ -593,6 +602,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32DCF4162DC0D6CC0067684F /* XCRemoteSwiftPackageReference "rive-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rive-app/rive-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32DCF4172DC0D6CC0067684F /* RiveRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32DCF4162DC0D6CC0067684F /* XCRemoteSwiftPackageReference "rive-ios" */;
+			productName = RiveRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 326C10E32DA565DE0057254D /* Project object */;
 }

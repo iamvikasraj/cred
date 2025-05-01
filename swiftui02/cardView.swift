@@ -9,10 +9,33 @@ import SwiftUI
 
 struct cardView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            // Black background for the entire view
+            Color.black
+                .ignoresSafeArea() // This ignores all safe areas
+            
+            GeometryReader { geometry in
+                VStack {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 20) {
+                           
+                            
+                            Spacer() // Pushes content up
+                        }
+                        .frame(minHeight: geometry.size.height - 22) // Ensure VStack fills ScrollView minus padding
+                        .padding(.top, 60)
+                        .frame(maxWidth: .infinity)
+                    }
+                    .background(Color.white)
+                    .cornerRadius(20)
+                }
+                .ignoresSafeArea(.container, edges: .all)
+                .padding(.bottom, 11) // This specifically ignores the top safe area
+            }
+        }
     }
 }
 
 #Preview {
-    cardView()
+    MainView()
 }
