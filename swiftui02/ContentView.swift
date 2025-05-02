@@ -3,7 +3,7 @@ import RiveRuntime
 
 // Main app structure with tab view
 struct MainView: View {
-    @State private var selectedTab: Tab = .cards
+    @State private var selectedTab: Tab = .home
     
     enum Tab {
         case home

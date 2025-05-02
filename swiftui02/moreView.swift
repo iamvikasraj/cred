@@ -19,6 +19,8 @@ struct more: View {
                 VStack {
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(alignment: .trailing, spacing: 52) {
+                            
+                                //top navigation section
                                 HStack(alignment: .bottom) {
                                     VStack(alignment: .leading, spacing: 13) {
                                         VStack(alignment: .leading, spacing: 10) {
@@ -51,7 +53,7 @@ struct more: View {
                                         .overlay(
                                           RoundedRectangle(cornerRadius: 60)
                                             .inset(by: 0.25)
-                                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
+                                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 1)
                                         )
                                         
                                         HStack(alignment: .top, spacing: 10) {
@@ -64,7 +66,7 @@ struct more: View {
                                         .overlay(
                                           RoundedRectangle(cornerRadius: 60)
                                             .inset(by: 0.25)
-                                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
+                                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 1)
                                         )
                                     }
                                     .padding(0)
@@ -73,177 +75,8 @@ struct more: View {
                                 .frame(maxWidth: .infinity, alignment: .bottomLeading)
                                 
                                 
-                                //banner design for the card
+                                //First row of icons
                                 VStack(alignment: .center, spacing: 60) {
-                                    VStack(alignment: .leading, spacing: 20) {
-                                        VStack(alignment: .leading, spacing: 10) {
-                                            
-                                        }
-                                        .padding(0)
-                                        .frame(width: 61, height: 8, alignment: .topLeading)
-                                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                        
-                                        HStack(alignment: .center) {
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            
-                                        
-                                        }
-                                        .padding(0)
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                        
-                                        
-                                    }
-                                    .padding(0)
-                                    .frame(maxWidth: .infinity, alignment: .topLeading)
                                     
                                     VStack(alignment: .leading, spacing: 20) {
                                         VStack(alignment: .leading, spacing: 10) {
@@ -253,844 +86,82 @@ struct more: View {
                                         .frame(width: 61, height: 8, alignment: .topLeading)
                                         .background(Color(red: 0.85, green: 0.85, blue: 0.85))
                                         
-                                        HStack(alignment: .center) {
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            
+                                        oneGrid()
                                         
-                                        }
-                                        .padding(0)
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                        
-                                        HStack(alignment: .center) {
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            
-                                        
-                                        }
-                                        .padding(0)
-                                        .frame(maxWidth: .infinity, alignment: .center)
+                                        oneGrid()
                                         
                                         
                                     }
                                     .padding(0)
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    
                                 }
                                 .padding(0)
                                 .frame(maxWidth: .infinity, alignment: .top)
                                 
                                 
                                 //banner design for the card
-                                HStack(alignment: .center, spacing: 10) {
-                                    
-                                }
-                                .padding(0)
-                                .frame(maxWidth: .infinity, minHeight: 85, maxHeight: 85, alignment: .leading)
-                                .background(.white)
-                                .cornerRadius(10)
-                                .overlay(
-                                  RoundedRectangle(cornerRadius: 10)
-                                    .inset(by: 0.25)
-                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                )
+                                bannerview()
                                 
-                                //banner design for the card
-                                VStack(alignment: .center, spacing: 60) {
-                                    VStack(alignment: .leading, spacing: 20) {
-                                        VStack(alignment: .leading, spacing: 10) {
-                                            
-                                        }
-                                        .padding(0)
-                                        .frame(width: 61, height: 8, alignment: .topLeading)
-                                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                        
-                                        HStack(alignment: .center) {
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            
-                                        
-                                        }
-                                        .padding(0)
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                        
+                            VStack(alignment: .center, spacing: 60) {
+                                
+                                VStack(alignment: .leading, spacing: 20) {
+                                    VStack(alignment: .leading, spacing: 10) {
                                         
                                     }
                                     .padding(0)
-                                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    .frame(width: 61, height: 8, alignment: .topLeading)
+                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
                                     
-                                    VStack(alignment: .leading, spacing: 20) {
-                                        VStack(alignment: .leading, spacing: 10) {
-                                            
-                                        }
-                                        .padding(0)
-                                        .frame(width: 61, height: 8, alignment: .topLeading)
-                                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                        
-                                        HStack(alignment: .center) {
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            
-                                        
-                                        }
-                                        .padding(0)
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                        
-                                        HStack(alignment: .center) {
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            Spacer()
-                                            
-                                            VStack(alignment: .center, spacing: 11) {
-                                                HStack(alignment: .center, spacing: 10) {
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
-                                                .background(.white)
-                                                .cornerRadius(60)
-                                                .overlay(
-                                                  RoundedRectangle(cornerRadius: 60)
-                                                    .inset(by: 0.25)
-                                                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-                                                )
-                                                
-                                                VStack(alignment: .center, spacing: 3) {
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                    VStack(alignment: .leading, spacing: 10) {
-                                                        
-                                                    }
-                                                    .padding(0)
-                                                    .frame(width: 31, height: 12, alignment: .topLeading)
-                                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                                    
-                                                }
-                                                .padding(0)
-                                                .frame(maxWidth: .infinity, alignment: .top)
-                                            }
-                                            .padding(0)
-                                            .frame(width: 62, alignment: .center)
-                                            
-                                            
-                                        
-                                        }
-                                        .padding(0)
-                                        .frame(maxWidth: .infinity, alignment: .center)
-                                        
-                                        
-                                    }
-                                    .padding(0)
-                                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                                    oneGrid()
+                                    
                                 }
                                 .padding(0)
-                                .frame(maxWidth: .infinity, alignment: .top)
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                                
+                                
+                                VStack(alignment: .leading, spacing: 20) {
+                                    VStack(alignment: .leading, spacing: 10) {
+                                        
+                                    }
+                                    .padding(0)
+                                    .frame(width: 61, height: 8, alignment: .topLeading)
+                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                                    
+                                    oneGrid()
+                                    
+                                }
+                                .padding(0)
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                                
+                            }
+                            .padding(0)
+                            .frame(maxWidth: .infinity, alignment: .top)
+                            
+                            
+                            
+                            VStack(alignment: .center, spacing: 60) {
+                                
+                                VStack(alignment: .leading, spacing: 20) {
+                                    VStack(alignment: .leading, spacing: 10) {
+                                        
+                                    }
+                                    .padding(0)
+                                    .frame(width: 61, height: 8, alignment: .topLeading)
+                                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                                    
+                                    oneGrid()
+                                    
+                                    oneGrid()
+                                    
+                                    
+                                }
+                                .padding(0)
+                                .frame(maxWidth: .infinity, alignment: .topLeading)
+                                
+                            }
+                            .padding(0)
+                            .frame(maxWidth: .infinity, alignment: .top)
                                 
                             }
                             .padding(.horizontal, 24)
@@ -1116,4 +187,86 @@ struct more: View {
 
 #Preview {
     more()
+}
+
+struct ExtractedView: View {
+    var body: some View {
+        VStack(alignment: .center, spacing: 11) {
+            HStack(alignment: .center, spacing: 10) {
+                
+            }
+            .padding(0)
+            .frame(maxWidth: .infinity, minHeight: 62, maxHeight: 62, alignment: .leading)
+            .background(.white)
+            .cornerRadius(60)
+            .overlay(
+                RoundedRectangle(cornerRadius: 60)
+                    .inset(by: 0.25)
+                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 1)
+            )
+            
+            VStack(alignment: .center, spacing: 3) {
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                }
+                .padding(0)
+                .frame(maxWidth: .infinity, minHeight: 12, maxHeight: 12, alignment: .topLeading)
+                .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    
+                }
+                .padding(0)
+                .frame(width: 31, height: 12, alignment: .topLeading)
+                .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                
+            }
+            .padding(0)
+            .frame(maxWidth: .infinity, alignment: .top)
+        }
+        .padding(0)
+        .frame(width: 62, alignment: .center)
+    }
+}
+
+struct oneGrid: View {
+    var body: some View {
+        HStack(alignment: .center) {
+            
+            
+            ExtractedView()
+            
+            Spacer()
+            
+            ExtractedView()
+            
+            Spacer()
+            
+            ExtractedView()
+            
+            Spacer()
+            
+            ExtractedView()
+            
+        }
+        .padding(0)
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
+}
+
+struct bannerview: View {
+    var body: some View {
+        HStack(alignment: .center, spacing: 10) {
+            
+        }
+        .padding(0)
+        .frame(maxWidth: .infinity, minHeight: 85, maxHeight: 85, alignment: .leading)
+        .background(.gray)
+        .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .inset(by: 0.25)
+                .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
+        )
+    }
 }
