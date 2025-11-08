@@ -3,6 +3,7 @@ import RiveRuntime
 
 // Main app structure with tab view
 struct MainView: View {
+    @StateObject private var router = AppRouter()
     @State private var selectedTab: Tab = .home
     
     enum Tab {
@@ -14,37 +15,47 @@ struct MainView: View {
     }
     
     var body: some View {
-           GeometryReader { geometry in
-               VStack(spacing: 0) {
-                   // Content based on selected tab
-                   TabContent(selectedTab: selectedTab)
-                   
-                   // Custom animated tab bar
-                   CustomTabBar(selectedTab: $selectedTab)
-                       
-               }
-           }
-           .ignoresSafeArea(edges: .bottom)
-       }
+        NavigationStack(path: $router.navigationPath) {
+            GeometryReader { geometry in
+                VStack(spacing: 0) {
+                    // Content based on selected tab
+                    TabContent(selectedTab: selectedTab)
+                        .environmentObject(router)
+                    
+                    // Custom animated tab bar
+                    CustomTabBar(selectedTab: $selectedTab)
+                        
+                }
+            }
+            .ignoresSafeArea(edges: .bottom)
+            .withRouter(router)
+        }
+    }
    }
 
 // Tab content view that changes based on selected tab
 struct TabContent: View {
     let selectedTab: MainView.Tab
+    @EnvironmentObject var router: AppRouter
     
     var body: some View {
         ZStack {
             switch selectedTab {
             case .home:
                 HomeView()
+                    .environmentObject(router)
             case .rewards:
                 rewards()
+                    .environmentObject(router)
             case .cards:
                 cardView()
+                    .environmentObject(router)
             case .scan:
                 scanView()
+                    .environmentObject(router)
             case .more:
                 more()
+                    .environmentObject(router)
             }
         }
     }

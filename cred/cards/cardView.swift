@@ -202,54 +202,62 @@ struct cardView: View {
 }
 
 struct cardDetails: View {
+    let cardId: String = UUID().uuidString // You can pass actual card ID
+    @EnvironmentObject var router: AppRouter
+    
     var body: some View {
-        HStack(alignment: .center, spacing: 10) {
-            VStack(alignment: .leading, spacing: 21) {
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: 40, height: 40)
-                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                
-                
-                VStack(alignment: .leading, spacing: 10) {
+        Button(action: {
+            router.navigate(to: .cardDetail(cardId: cardId))
+        }) {
+            HStack(alignment: .center, spacing: 10) {
+                VStack(alignment: .leading, spacing: 21) {
                     Rectangle()
                         .foregroundColor(.clear)
-                        .frame(maxWidth: .infinity, minHeight: 10, maxHeight: 10)
-                        .background(Color(red: 0.63, green: 0.63, blue: 0.63))
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 83, height: 10)
+                        .frame(width: 40, height: 40)
                         .background(Color(red: 0.85, green: 0.85, blue: 0.85))
                     
-                    Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 83, height: 10)
-                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                    
+                    VStack(alignment: .leading, spacing: 10) {
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(maxWidth: .infinity, minHeight: 10, maxHeight: 10)
+                            .background(Color(red: 0.63, green: 0.63, blue: 0.63))
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 83, height: 10)
+                            .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 83, height: 10)
+                            .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                        
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 83, height: 10)
+                            .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                    }
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
                     
                     Rectangle()
-                        .foregroundColor(.clear)
-                        .frame(width: 83, height: 10)
-                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+                      .foregroundColor(.clear)
+                      .frame(width: 41, height: 14)
+                      .background(Color(red: 0, green: 0.3, blue: 0.81))
+                    
                 }
-                .frame(maxWidth: .infinity, alignment: .topLeading)
-                
-                Rectangle()
-                  .foregroundColor(.clear)
-                  .frame(width: 41, height: 14)
-                  .background(Color(red: 0, green: 0.3, blue: 0.81))
-                
+                .padding(0)
+                .frame(width: 104, alignment: .topLeading)
             }
-            .padding(0)
-            .frame(width: 104, alignment: .topLeading)
+            .padding(20)
+            .frame(width: 151, alignment: .leading)
+            .background(.white)
+            .overlay(
+                Rectangle()
+                    .inset(by: 0.5)
+                    .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 1)
+            )
         }
-        .padding(20)
-        .frame(width: 151, alignment: .leading)
-        .background(.white)
-        .overlay(
-            Rectangle()
-                .inset(by: 0.5)
-                .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 1)
-        )
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
