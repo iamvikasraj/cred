@@ -1,13 +1,13 @@
 //
-//  swiftui02UITestsLaunchTests.swift
-//  swiftui02UITests
+//  credUITestsLaunchTests.swift
+//  credUITests
 //
 //  Created by Vikas Raj Yadav on 08/04/25.
 //
 
 import XCTest
 
-final class swiftui02UITestsLaunchTests: XCTestCase {
+final class credUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

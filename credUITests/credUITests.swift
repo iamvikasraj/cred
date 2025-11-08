@@ -1,13 +1,13 @@
 //
-//  swiftui02UITests.swift
-//  swiftui02UITests
+//  credUITests.swift
+//  credUITests
 //
 //  Created by Vikas Raj Yadav on 08/04/25.
 //
 
 import XCTest
 
-final class swiftui02UITests: XCTestCase {
+final class credUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
