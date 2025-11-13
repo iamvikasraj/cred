@@ -30,6 +30,7 @@ struct SettingsView: View {
                 .cornerRadius(10)
             }
         }
+        .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -1,14 +1,13 @@
 //
-//  CardDetailView.swift
+//  HelpView.swift
 //  cred
 //
-//  Card detail view for navigation
+//  Help view for navigation
 //
 
 import SwiftUI
 
-struct CardDetailView: View {
-    let cardId: String
+struct HelpView: View {
     @EnvironmentObject var router: AppRouter
     
     var body: some View {
@@ -17,11 +16,12 @@ struct CardDetailView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Card Detail")
+                Text("Help & Support")
                     .foregroundColor(.white)
                     .font(.largeTitle)
+                    .padding()
                 
-                Text("Card ID: \(cardId)")
+                Text("Get help and contact support")
                     .foregroundColor(.gray)
                     .padding()
                 
@@ -34,14 +34,14 @@ struct CardDetailView: View {
                 .cornerRadius(10)
             }
         }
-        .navigationTitle("Card Details")
+        .navigationTitle("Help & Support")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     NavigationStack {
-        CardDetailView(cardId: "123")
+        HelpView()
             .environmentObject(AppRouter())
     }
 }

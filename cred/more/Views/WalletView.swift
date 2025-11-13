@@ -1,14 +1,13 @@
 //
-//  CardDetailView.swift
+//  WalletView.swift
 //  cred
 //
-//  Card detail view for navigation
+//  Wallet view for navigation
 //
 
 import SwiftUI
 
-struct CardDetailView: View {
-    let cardId: String
+struct WalletView: View {
     @EnvironmentObject var router: AppRouter
     
     var body: some View {
@@ -17,11 +16,12 @@ struct CardDetailView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Card Detail")
+                Text("Wallet")
                     .foregroundColor(.white)
                     .font(.largeTitle)
+                    .padding()
                 
-                Text("Card ID: \(cardId)")
+                Text("Manage your wallet and payments")
                     .foregroundColor(.gray)
                     .padding()
                 
@@ -34,14 +34,14 @@ struct CardDetailView: View {
                 .cornerRadius(10)
             }
         }
-        .navigationTitle("Card Details")
+        .navigationTitle("Wallet")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     NavigationStack {
-        CardDetailView(cardId: "123")
+        WalletView()
             .environmentObject(AppRouter())
     }
 }

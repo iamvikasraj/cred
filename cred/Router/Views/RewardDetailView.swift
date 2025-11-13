@@ -34,6 +34,7 @@ struct RewardDetailView: View {
                 .cornerRadius(10)
             }
         }
+        .navigationTitle("Reward Details")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

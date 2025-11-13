@@ -1,14 +1,13 @@
 //
-//  CardDetailView.swift
+//  PayBillsView.swift
 //  cred
 //
-//  Card detail view for navigation
+//  Pay Bills view for navigation
 //
 
 import SwiftUI
 
-struct CardDetailView: View {
-    let cardId: String
+struct PayBillsView: View {
     @EnvironmentObject var router: AppRouter
     
     var body: some View {
@@ -17,11 +16,12 @@ struct CardDetailView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Card Detail")
+                Text("Pay Bills")
                     .foregroundColor(.white)
                     .font(.largeTitle)
+                    .padding()
                 
-                Text("Card ID: \(cardId)")
+                Text("Pay your bills and utilities")
                     .foregroundColor(.gray)
                     .padding()
                 
@@ -34,14 +34,14 @@ struct CardDetailView: View {
                 .cornerRadius(10)
             }
         }
-        .navigationTitle("Card Details")
+        .navigationTitle("Pay Bills")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     NavigationStack {
-        CardDetailView(cardId: "123")
+        PayBillsView()
             .environmentObject(AppRouter())
     }
 }

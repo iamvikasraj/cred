@@ -18,6 +18,14 @@ enum Route: Hashable {
     case more
     case settings
     case profile
+    case wallet
+    case analytics
+    case payBills
+    case invest
+    case loans
+    case banking
+    case help
+    case about
     // Add more routes as needed
 }
 
@@ -28,8 +36,17 @@ class AppRouter: ObservableObject {
     
     // Navigate to a specific route
     func navigate(to route: Route) {
-        currentRoute = route
-        navigationPath.append(route)
+        // Ensure we're on the main thread
+        if Thread.isMainThread {
+            currentRoute = route
+            navigationPath.append(route)
+        } else {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.currentRoute = route
+                self.navigationPath.append(route)
+            }
+        }
     }
     
     // Navigate back
@@ -87,6 +104,22 @@ struct RouterView: ViewModifier {
             SettingsView()
         case .profile:
             ProfileView()
+        case .wallet:
+            WalletView()
+        case .analytics:
+            AnalyticsView()
+        case .payBills:
+            PayBillsView()
+        case .invest:
+            InvestView()
+        case .loans:
+            LoansView()
+        case .banking:
+            BankingView()
+        case .help:
+            HelpView()
+        case .about:
+            AboutView()
         }
     }
 }

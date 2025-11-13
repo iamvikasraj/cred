@@ -1,13 +1,13 @@
 //
-//  ProfileView.swift
+//  AnalyticsView.swift
 //  cred
 //
-//  Profile view for navigation
+//  Analytics view for navigation
 //
 
 import SwiftUI
 
-struct ProfileView: View {
+struct AnalyticsView: View {
     @EnvironmentObject var router: AppRouter
     
     var body: some View {
@@ -16,9 +16,13 @@ struct ProfileView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Profile")
+                Text("Analytics")
                     .foregroundColor(.white)
                     .font(.largeTitle)
+                    .padding()
+                
+                Text("Track your spending and insights")
+                    .foregroundColor(.gray)
                     .padding()
                 
                 Button("Go Back") {
@@ -30,13 +34,14 @@ struct ProfileView: View {
                 .cornerRadius(10)
             }
         }
+        .navigationTitle("Analytics")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     NavigationStack {
-        ProfileView()
+        AnalyticsView()
             .environmentObject(AppRouter())
     }
 }

@@ -26,9 +26,9 @@ struct MainView: View {
                     CustomTabBar(selectedTab: $selectedTab)
                         
                 }
+                .withRouter(router)
             }
             .ignoresSafeArea(edges: .bottom)
-            .withRouter(router)
         }
     }
    }
@@ -39,7 +39,7 @@ struct TabContent: View {
     @EnvironmentObject var router: AppRouter
     
     var body: some View {
-        ZStack {
+        Group {
             switch selectedTab {
             case .home:
                 HomeView()
@@ -138,17 +138,43 @@ struct CustomTabBar: View {
         }
         .frame(height: 100)
         .onAppear {
+            setupRive()
+        }
+        .onChange(of: selectedTab) { oldValue, newValue in
+            // Update Rive state when tab changes
+            updateRiveState(for: newValue)
+        }
+    }
+    
+    // Setup Rive animation
+    private func setupRive() {
+        if riveViewModel == nil {
             riveViewModel = RiveViewModel(
                 fileName: "cred",
                 stateMachineName: "nav",
                 autoPlay: true
             )
             
-            // Initialize with current tab
+            // Initialize with current tab after a small delay
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                updateTab(selectedTab)
+                updateRiveState(for: selectedTab)
             }
+        } else {
+            // If already set up, just update the state
+            updateRiveState(for: selectedTab)
         }
+    }
+    
+    // Update Rive state for a specific tab
+    private func updateRiveState(for tab: MainView.Tab) {
+        guard let riveModel = riveViewModel else { return }
+        
+        // Reset all inputs first
+        resetAllInputs()
+        
+        // Set the current tab's input to true
+        let inputName = getInputName(for: tab)
+        riveModel.setInput(inputName, value: true)
     }
     
     // Helper function to update tab and handle Rive inputs
@@ -157,22 +183,18 @@ struct CustomTabBar: View {
         if selectedTab != tab {
             // Update the selected tab
             selectedTab = tab
-            
-            // Reset all inputs
-            resetAllInputs()
-            
-            // Set the new tab's input to true
-            riveViewModel?.setInput(getInputName(for: tab), value: true)
+            // Rive state will update via onChange modifier
         }
     }
     
     // Helper to reset all inputs to false
     private func resetAllInputs() {
-        riveViewModel?.setInput("home", value: false)
-        riveViewModel?.setInput("cards", value: false)
-        riveViewModel?.setInput("scan", value: false)
-        riveViewModel?.setInput("rewards", value: false)
-        riveViewModel?.setInput("more", value: false)
+        guard let riveModel = riveViewModel else { return }
+        riveModel.setInput("home", value: false)
+        riveModel.setInput("cards", value: false)
+        riveModel.setInput("scan", value: false)
+        riveModel.setInput("rewards", value: false)
+        riveModel.setInput("more", value: false)
     }
     
     // Helper to get input name for a tab

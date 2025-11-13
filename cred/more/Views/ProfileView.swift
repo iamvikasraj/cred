@@ -1,14 +1,13 @@
 //
-//  CardDetailView.swift
+//  ProfileView.swift
 //  cred
 //
-//  Card detail view for navigation
+//  Profile view for navigation
 //
 
 import SwiftUI
 
-struct CardDetailView: View {
-    let cardId: String
+struct ProfileView: View {
     @EnvironmentObject var router: AppRouter
     
     var body: some View {
@@ -17,12 +16,9 @@ struct CardDetailView: View {
                 .ignoresSafeArea()
             
             VStack {
-                Text("Card Detail")
+                Text("Profile")
                     .foregroundColor(.white)
                     .font(.largeTitle)
-                
-                Text("Card ID: \(cardId)")
-                    .foregroundColor(.gray)
                     .padding()
                 
                 Button("Go Back") {
@@ -34,14 +30,14 @@ struct CardDetailView: View {
                 .cornerRadius(10)
             }
         }
-        .navigationTitle("Card Details")
+        .navigationTitle("Profile")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
     NavigationStack {
-        CardDetailView(cardId: "123")
+        ProfileView()
             .environmentObject(AppRouter())
     }
 }
