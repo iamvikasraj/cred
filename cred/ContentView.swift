@@ -39,6 +39,7 @@ struct TabContent: View {
             }
         }
         .environmentObject(router)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

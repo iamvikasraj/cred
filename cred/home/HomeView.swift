@@ -94,23 +94,89 @@ private struct MoneyMattersSection: View {
     }
 }
 
+/// [Figma 1546:1061](https://www.figma.com/design/ill9Eyvlr6lzVAUvOeqlly/Loop-Homepage-Redesign---2026?node-id=1546-1061&m=dev)
 private struct UnlockedSection: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text("Unlocked for You")
-                .font(AppSansFont.font(size: 12, weight: .medium))
-                .foregroundColor(.gray)
-                .textCase(.uppercase)
+    private let cardGreen = Color(red: 17 / 255, green: 45 / 255, blue: 29 / 255)
+    private let labelGray = Color(red: 133 / 255, green: 133 / 255, blue: 133 / 255)
+    private let cardText = Color(red: 254 / 255, green: 255 / 255, blue: 255 / 255)
 
-            RoundedRectangle(cornerRadius: 4)
-                .fill(Color.blue)
-                .frame(height: 160)
+    var body: some View {
+        VStack(alignment: .leading, spacing: 21) {
+            Text("UNLOCKED FOR YOU")
+                .font(AppSansFont.font(size: 10, weight: .semibold))
+                .foregroundStyle(labelGray)
+                .tracking(1.2)
+                .textCase(.uppercase)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            ZStack(alignment: .topLeading) {
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(cardGreen)
+                    .frame(height: 140)
+
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("VALID TILL 31ST MARCH")
+                        .font(AppSansFont.font(size: 9, weight: .semibold))
+                        .foregroundStyle(cardText)
+                        .tracking(1.08)
+                        .textCase(.uppercase)
+
+                    Text("withdraw now.\nstart your EMI in May.")
+                        .font(AppSansFont.font(size: 12, weight: .semibold))
+                        .foregroundStyle(cardText)
+                        .tracking(1.44)
+                        .lineSpacing(7)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.leading, 22)
+                .padding(.top, 26)
+                .padding(.trailing, 16)
+                .padding(.bottom, 16)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.horizontal, 24)
         .padding(.top, 24)
         .padding(.bottom, 16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.white)
+    }
+}
+
+/// Loop homepage “daily reward” pill — [Figma node 1533:1609](https://www.figma.com/design/ill9Eyvlr6lzVAUvOeqlly/Loop-Homepage-Redesign---2026?node-id=1533-1609).
+private struct HomeDailyRewardPill: View {
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "gift")
+                .resizable()
+                .scaledToFill()
+                .frame(width: 20, height: 20)
+                .foregroundStyle(Color(red: 0.2, green: 0.2, blue: 0.2))
+
+            Text("daily reward is live")
+                .font(AppSansFont.font(size: 12, weight: .regular))
+                .foregroundStyle(Color(red: 0.05, green: 0.05, blue: 0.05))
+                .lineLimit(1)
+        }
+        .padding(.horizontal, 7)
+        .padding(.vertical, 5)
+        .background {
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            Color(red: 254 / 255, green: 253 / 255, blue: 253 / 255),
+                            Color(red: 255 / 255, green: 245 / 255, blue: 219 / 255),
+                        ],
+                        startPoint: .trailing,
+                        endPoint: .leading
+                    )
+                )
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .stroke(Color(red: 255 / 255, green: 216 / 255, blue: 107 / 255), lineWidth: 1)
+        }
     }
 }
 
@@ -122,23 +188,26 @@ private struct HomeTopBar: View {
                 Image("vry")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 48, height: 48)
+                    .frame(width: 46, height: 46)
                     .clipShape(Circle())
                     .overlay {
                         Circle()
                             .stroke(Color.white, lineWidth: 2)
                     }
+                    .compositingGroup()
                     .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 4)
+                    // Shadow draws outside bounds; padding reserves layout so ScrollView doesn’t clip it.
+                    .padding(6)
             }
             .buttonStyle(.plain)
 
             Spacer()
-            Color.clear
-                .frame(width: 140, height: 40)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.black)
-                }
+
+            Button {
+            } label: {
+                HomeDailyRewardPill()
+            }
+            .buttonStyle(.plain)
 
             Spacer()
 
@@ -175,15 +244,16 @@ private struct HomeScrollContent: View {
 struct HomeView: View {
     var body: some View {
         ZStack {
-            // Only the backdrop extends under the status bar; the card stays in the safe layout
-            // so the top rounded corners aren’t clipped by the notch / status area.
+            // Same shell as rewards / scan: full-screen black, then content ignores container safe area
+            // so the white card isn’t clipped at the top by NavigationStack / status inset.
             Color.black
-                .ignoresSafeArea(edges: .all)
+                .ignoresSafeArea()
 
             GeometryReader { geometry in
                 VStack(alignment: .center, spacing: 0) {
                     ScrollView(.vertical, showsIndicators: false) {
                         HomeScrollContent()
+                            .padding(.vertical, 48)
                     }
                     .frame(width: safeWidth(geometry.size.width))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -193,6 +263,7 @@ struct HomeView: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                 }
+                .ignoresSafeArea(.container, edges: .all)
                 .padding(.bottom, 12)
             }
         }

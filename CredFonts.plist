@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Resources/Fonts/Gilroy-Thin.ttf</string>
+		<string>Resources/Fonts/Gilroy-Regular.ttf</string>
+		<string>Resources/Fonts/Gilroy-Medium.ttf</string>
+		<string>Resources/Fonts/Gilroy-SemiBold.ttf</string>
+		<string>Resources/Fonts/Gilroy-Bold.ttf</string>
+		<string>Resources/Fonts/Gilroy-ExtraBold.ttf</string>
+		<string>Resources/Fonts/PPCirka-Regular.ttf</string>
+		<string>Resources/Fonts/PPCirka-Medium.ttf</string>
+		<string>Resources/Fonts/PPCirka-Bold.ttf</string>
+	</array>
+</dict>
+</plist>
