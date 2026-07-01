@@ -18,7 +18,7 @@ struct ProfileView: View {
             VStack {
                 Text("Profile")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Button("Go Back") {

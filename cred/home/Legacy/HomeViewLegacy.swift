@@ -22,7 +22,7 @@ struct HomeViewLegacy: View {
                                 .cornerRadius(10)
                             
                             Text("Deals, rewards & more")
-                              .font(Font.custom("Inter", size: 12))
+                              .font(AppSansFont.font(size: 12))
                               .foregroundColor(.white)
                         }
                         .padding(.horizontal, 16)
@@ -61,15 +61,12 @@ struct HomeViewLegacy: View {
                                     .cornerRadius(24)
                                 
                                 Text("LIFETIME CASHBACK")
-                                    .font(Font.custom("Inter", size: 8))
+                                    .font(AppSansFont.font(size: 8))
                                     .kerning(1.52)
                                     .foregroundColor(Color(red: 0.52, green: 0.52, blue: 0.52))
                                 
                                 Text("237")
-                                    .font(
-                                        Font.custom("Inter", size: 8)
-                                            .weight(.semibold)
-                                    )
+                                    .font(AppSansFont.font(size: 8, weight: .semibold))
                                     .foregroundColor(Color(red: 0.05, green: 0.05, blue: 0.05))
                             }
                             .padding(.top, 30)
@@ -87,19 +84,13 @@ struct HomeViewLegacy: View {
                                 
                                 VStack(alignment: .leading, spacing: 7) {
                                     Text("CRED CASH")
-                                        .font(
-                                            Font.custom("Inter", size: 8)
-                                                .weight(.semibold)
-                                        )
+                                        .font(AppSansFont.font(size: 8, weight: .semibold))
                                         .kerning(1.52)
                                         .foregroundColor(Color(red: 0.52, green: 0.52, blue: 0.52))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                     
                                     Text("$15,216")
-                                        .font(
-                                            Font.custom("Inter", size: 12)
-                                                .weight(.semibold)
-                                        )
+                                        .font(AppSansFont.font(size: 12, weight: .semibold))
                                         .foregroundColor(Color(red: 0.05, green: 0.05, blue: 0.05))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                 }
@@ -111,19 +102,13 @@ struct HomeViewLegacy: View {
                                 
                                 VStack(alignment: .leading, spacing: 7) {
                                     Text("CRED MONEY")
-                                        .font(
-                                            Font.custom("Inter", size: 8)
-                                                .weight(.semibold)
-                                        )
+                                        .font(AppSansFont.font(size: 8, weight: .semibold))
                                         .kerning(1.52)
                                         .foregroundColor(Color(red: 0.52, green: 0.52, blue: 0.52))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                     
                                     Text("2 updates")
-                                        .font(
-                                            Font.custom("Inter", size: 12)
-                                                .weight(.semibold)
-                                        )
+                                        .font(AppSansFont.font(size: 12, weight: .semibold))
                                         .foregroundColor(Color(red: 0.05, green: 0.05, blue: 0.05))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                 }
@@ -135,19 +120,13 @@ struct HomeViewLegacy: View {
                                 
                                 VStack(alignment: .leading, spacing: 7) {
                                     Text("CRED WALLET")
-                                        .font(
-                                            Font.custom("Inter", size: 8)
-                                                .weight(.semibold)
-                                        )
+                                        .font(AppSansFont.font(size: 8, weight: .semibold))
                                         .kerning(1.52)
                                         .foregroundColor(Color(red: 0.52, green: 0.52, blue: 0.52))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                     
                                     Text("complete setup")
-                                        .font(
-                                            Font.custom("Inter", size: 12)
-                                                .weight(.semibold)
-                                        )
+                                        .font(AppSansFont.font(size: 12, weight: .semibold))
                                         .foregroundColor(Color(red: 0.05, green: 0.05, blue: 0.05))
                                         .frame(maxWidth: .infinity, alignment: .topLeading)
                                 }
@@ -213,10 +192,7 @@ struct HomeViewLegacy: View {
                                             )
                                             
                                             Text("CIBIL score")
-                                              .font(
-                                                Font.custom("Inter", size: 10)
-                                                  .weight(.medium)
-                                              )
+                                              .font(AppSansFont.font(size: 10, weight: .medium))
                                               .kerning(1)
                                               .multilineTextAlignment(.center)
                                               .foregroundColor(.black)
@@ -247,10 +223,7 @@ struct HomeViewLegacy: View {
                                             )
                                             
                                             Text("Garage")
-                                              .font(
-                                                Font.custom("Inter", size: 10)
-                                                  .weight(.medium)
-                                              )
+                                              .font(AppSansFont.font(size: 10, weight: .medium))
                                               .kerning(1)
                                               .multilineTextAlignment(.center)
                                               .foregroundColor(.black)
@@ -281,10 +254,7 @@ struct HomeViewLegacy: View {
                                             )
                                             
                                             Text("Feature 3")
-                                              .font(
-                                                Font.custom("Inter", size: 10)
-                                                  .weight(.medium)
-                                              )
+                                              .font(AppSansFont.font(size: 10, weight: .medium))
                                               .kerning(1)
                                               .multilineTextAlignment(.center)
                                               .foregroundColor(.black)
@@ -315,10 +285,7 @@ struct HomeViewLegacy: View {
                                             )
                                             
                                             Text("Feature 4")
-                                              .font(
-                                                Font.custom("Inter", size: 10)
-                                                  .weight(.medium)
-                                              )
+                                              .font(AppSansFont.font(size: 10, weight: .medium))
                                               .kerning(1)
                                               .multilineTextAlignment(.center)
                                               .foregroundColor(.black)

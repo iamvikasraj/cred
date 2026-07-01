@@ -20,6 +20,7 @@ struct MainView: View {
             }
             .withRouter(router)
             .ignoresSafeArea(edges: .bottom)
+            .environment(\.font, AppSansFont.font(size: AppSansFont.bodySize))
         }
     }
 }

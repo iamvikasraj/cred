@@ -4,15 +4,14 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Resources/Fonts/Gilroy-Thin.ttf</string>
-		<string>Resources/Fonts/Gilroy-Regular.ttf</string>
-		<string>Resources/Fonts/Gilroy-Medium.ttf</string>
-		<string>Resources/Fonts/Gilroy-SemiBold.ttf</string>
-		<string>Resources/Fonts/Gilroy-Bold.ttf</string>
-		<string>Resources/Fonts/Gilroy-ExtraBold.ttf</string>
-		<string>Resources/Fonts/PPCirka-Regular.ttf</string>
-		<string>Resources/Fonts/PPCirka-Medium.ttf</string>
-		<string>Resources/Fonts/PPCirka-Bold.ttf</string>
+		<string>BRFirma-Thin.ttf</string>
+		<string>BRFirma-ExtraLight.ttf</string>
+		<string>BRFirma-Light.ttf</string>
+		<string>BRFirma-Regular.ttf</string>
+		<string>BRFirma-Medium.ttf</string>
+		<string>BRFirma-SemiBold.ttf</string>
+		<string>BRFirma-Bold.ttf</string>
+		<string>BRFirma-Black.ttf</string>
 	</array>
 </dict>
 </plist>

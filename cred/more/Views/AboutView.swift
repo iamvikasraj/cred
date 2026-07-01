@@ -18,7 +18,7 @@ struct AboutView: View {
             VStack {
                 Text("About")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("App version and information")

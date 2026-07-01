@@ -19,7 +19,7 @@ struct CardDetailView: View {
             VStack {
                 Text("Card Detail")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                 
                 Text("Card ID: \(cardId)")
                     .foregroundColor(.gray)

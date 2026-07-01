@@ -12,8 +12,7 @@ struct SectionHeader: View {
     
     var body: some View {
         Text(title)
-            .font(.caption)
-            .fontWeight(.bold)
+            .font(AppSansFont.font(size: 12, weight: .bold))
             .foregroundStyle(.gray)
             .textCase(.uppercase)
     }

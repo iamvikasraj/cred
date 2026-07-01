@@ -18,7 +18,7 @@ struct PayBillsView: View {
             VStack {
                 Text("Pay Bills")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("Pay your bills and utilities")

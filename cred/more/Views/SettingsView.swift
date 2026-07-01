@@ -18,7 +18,7 @@ struct SettingsView: View {
             VStack {
                 Text("Settings")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Button("Go Back") {

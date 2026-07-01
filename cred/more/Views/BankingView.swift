@@ -18,7 +18,7 @@ struct BankingView: View {
             VStack {
                 Text("Banking")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("Banking services and accounts")

@@ -1,8 +1,20 @@
 import SwiftUI
+import UIKit
 
-/// Temporary **SF Rounded** everywhere `AppSansFont` is used. Swap implementation later (e.g. Gilroy via `NeoPOPFont`).
+/// App sans via **BR Firma** (`NeoPOPFont.gilroy`).
 enum AppSansFont {
+    static let bodySize: CGFloat = 17
+
     static func font(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        .system(size: size, weight: weight, design: .rounded)
+        NeoPOPFont.gilroy(size: size, weight: weight)
+    }
+
+    static func configureAppearance() {
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: NeoPOPFont.uiFont(size: 17, weight: .semibold),
+        ]
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .font: NeoPOPFont.uiFont(size: 34, weight: .bold),
+        ]
     }
 }

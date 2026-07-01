@@ -8,6 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		32DCF4182DC0D6CC0067684F /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 32DCF4172DC0D6CC0067684F /* RiveRuntime */; };
+		771652EA2FEBAF0700F37712 /* BRFirma-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E82FEBAF0700F37712 /* BRFirma-SemiBold.ttf */; };
+		771652EB2FEBAF0700F37712 /* BRFirma-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E52FEBAF0700F37712 /* BRFirma-Light.ttf */; };
+		771652EC2FEBAF0700F37712 /* BRFirma-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E92FEBAF0700F37712 /* BRFirma-Thin.ttf */; };
+		771652ED2FEBAF0700F37712 /* BRFirma-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E62FEBAF0700F37712 /* BRFirma-Medium.ttf */; };
+		771652EE2FEBAF0700F37712 /* BRFirma-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E22FEBAF0700F37712 /* BRFirma-Black.ttf */; };
+		771652EF2FEBAF0700F37712 /* BRFirma-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E32FEBAF0700F37712 /* BRFirma-Bold.ttf */; };
+		771652F02FEBAF0700F37712 /* BRFirma-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E42FEBAF0700F37712 /* BRFirma-ExtraLight.ttf */; };
+		771652F12FEBAF0700F37712 /* BRFirma-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E72FEBAF0700F37712 /* BRFirma-Regular.ttf */; };
+		771652F22FEBAF0700F37712 /* BRFirma-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E82FEBAF0700F37712 /* BRFirma-SemiBold.ttf */; };
+		771652F32FEBAF0700F37712 /* BRFirma-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E52FEBAF0700F37712 /* BRFirma-Light.ttf */; };
+		771652F42FEBAF0700F37712 /* BRFirma-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E92FEBAF0700F37712 /* BRFirma-Thin.ttf */; };
+		771652F52FEBAF0700F37712 /* BRFirma-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E62FEBAF0700F37712 /* BRFirma-Medium.ttf */; };
+		771652F62FEBAF0700F37712 /* BRFirma-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E22FEBAF0700F37712 /* BRFirma-Black.ttf */; };
+		771652F72FEBAF0700F37712 /* BRFirma-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E32FEBAF0700F37712 /* BRFirma-Bold.ttf */; };
+		771652F82FEBAF0700F37712 /* BRFirma-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E42FEBAF0700F37712 /* BRFirma-ExtraLight.ttf */; };
+		771652F92FEBAF0700F37712 /* BRFirma-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E72FEBAF0700F37712 /* BRFirma-Regular.ttf */; };
+		771652FA2FEBAF0700F37712 /* BRFirma-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E82FEBAF0700F37712 /* BRFirma-SemiBold.ttf */; };
+		771652FB2FEBAF0700F37712 /* BRFirma-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E52FEBAF0700F37712 /* BRFirma-Light.ttf */; };
+		771652FC2FEBAF0700F37712 /* BRFirma-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E92FEBAF0700F37712 /* BRFirma-Thin.ttf */; };
+		771652FD2FEBAF0700F37712 /* BRFirma-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E62FEBAF0700F37712 /* BRFirma-Medium.ttf */; };
+		771652FE2FEBAF0700F37712 /* BRFirma-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E22FEBAF0700F37712 /* BRFirma-Black.ttf */; };
+		771652FF2FEBAF0700F37712 /* BRFirma-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E32FEBAF0700F37712 /* BRFirma-Bold.ttf */; };
+		771653002FEBAF0700F37712 /* BRFirma-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E42FEBAF0700F37712 /* BRFirma-ExtraLight.ttf */; };
+		771653012FEBAF0700F37712 /* BRFirma-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E72FEBAF0700F37712 /* BRFirma-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +55,14 @@
 		326C10EB2DA565DE0057254D /* cred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		326C10F92DA565E00057254D /* credTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = credTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		326C11032DA565E00057254D /* credUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = credUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		771652E22FEBAF0700F37712 /* BRFirma-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-Black.ttf"; sourceTree = "<group>"; };
+		771652E32FEBAF0700F37712 /* BRFirma-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-Bold.ttf"; sourceTree = "<group>"; };
+		771652E42FEBAF0700F37712 /* BRFirma-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-ExtraLight.ttf"; sourceTree = "<group>"; };
+		771652E52FEBAF0700F37712 /* BRFirma-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-Light.ttf"; sourceTree = "<group>"; };
+		771652E62FEBAF0700F37712 /* BRFirma-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-Medium.ttf"; sourceTree = "<group>"; };
+		771652E72FEBAF0700F37712 /* BRFirma-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-Regular.ttf"; sourceTree = "<group>"; };
+		771652E82FEBAF0700F37712 /* BRFirma-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-SemiBold.ttf"; sourceTree = "<group>"; };
+		771652E92FEBAF0700F37712 /* BRFirma-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRFirma-Thin.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -80,6 +112,7 @@
 		326C10E22DA565DE0057254D = {
 			isa = PBXGroup;
 			children = (
+				771652E12FEBAEF200F37712 /* fonts */,
 				326C10ED2DA565DE0057254D /* cred */,
 				326C10FC2DA565E00057254D /* credTests */,
 				326C11062DA565E00057254D /* credUITests */,
@@ -95,6 +128,21 @@
 				326C11032DA565E00057254D /* credUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		771652E12FEBAEF200F37712 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				771652E22FEBAF0700F37712 /* BRFirma-Black.ttf */,
+				771652E32FEBAF0700F37712 /* BRFirma-Bold.ttf */,
+				771652E42FEBAF0700F37712 /* BRFirma-ExtraLight.ttf */,
+				771652E52FEBAF0700F37712 /* BRFirma-Light.ttf */,
+				771652E62FEBAF0700F37712 /* BRFirma-Medium.ttf */,
+				771652E72FEBAF0700F37712 /* BRFirma-Regular.ttf */,
+				771652E82FEBAF0700F37712 /* BRFirma-SemiBold.ttf */,
+				771652E92FEBAF0700F37712 /* BRFirma-Thin.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +269,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771652EA2FEBAF0700F37712 /* BRFirma-SemiBold.ttf in Resources */,
+				771652EB2FEBAF0700F37712 /* BRFirma-Light.ttf in Resources */,
+				771652EC2FEBAF0700F37712 /* BRFirma-Thin.ttf in Resources */,
+				771652ED2FEBAF0700F37712 /* BRFirma-Medium.ttf in Resources */,
+				771652EE2FEBAF0700F37712 /* BRFirma-Black.ttf in Resources */,
+				771652EF2FEBAF0700F37712 /* BRFirma-Bold.ttf in Resources */,
+				771652F02FEBAF0700F37712 /* BRFirma-ExtraLight.ttf in Resources */,
+				771652F12FEBAF0700F37712 /* BRFirma-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +284,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771652FA2FEBAF0700F37712 /* BRFirma-SemiBold.ttf in Resources */,
+				771652FB2FEBAF0700F37712 /* BRFirma-Light.ttf in Resources */,
+				771652FC2FEBAF0700F37712 /* BRFirma-Thin.ttf in Resources */,
+				771652FD2FEBAF0700F37712 /* BRFirma-Medium.ttf in Resources */,
+				771652FE2FEBAF0700F37712 /* BRFirma-Black.ttf in Resources */,
+				771652FF2FEBAF0700F37712 /* BRFirma-Bold.ttf in Resources */,
+				771653002FEBAF0700F37712 /* BRFirma-ExtraLight.ttf in Resources */,
+				771653012FEBAF0700F37712 /* BRFirma-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +299,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771652F22FEBAF0700F37712 /* BRFirma-SemiBold.ttf in Resources */,
+				771652F32FEBAF0700F37712 /* BRFirma-Light.ttf in Resources */,
+				771652F42FEBAF0700F37712 /* BRFirma-Thin.ttf in Resources */,
+				771652F52FEBAF0700F37712 /* BRFirma-Medium.ttf in Resources */,
+				771652F62FEBAF0700F37712 /* BRFirma-Black.ttf in Resources */,
+				771652F72FEBAF0700F37712 /* BRFirma-Bold.ttf in Resources */,
+				771652F82FEBAF0700F37712 /* BRFirma-ExtraLight.ttf in Resources */,
+				771652F92FEBAF0700F37712 /* BRFirma-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

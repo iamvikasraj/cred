@@ -18,7 +18,7 @@ struct HelpView: View {
             VStack {
                 Text("Help & Support")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("Get help and contact support")

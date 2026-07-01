@@ -19,7 +19,7 @@ struct RewardDetailView: View {
             VStack {
                 Text("Reward Detail")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                 
                 Text("Reward ID: \(rewardId)")
                     .foregroundColor(.gray)

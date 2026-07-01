@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct CredApp: App {
+    init() {
+        AppSansFont.configureAppearance()
+    }
+
     var body: some Scene {
         WindowGroup {
             MainView()
         }
     }
-    
 }

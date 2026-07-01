@@ -18,7 +18,7 @@ struct InvestView: View {
             VStack {
                 Text("Invest")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("Investment options and portfolio")

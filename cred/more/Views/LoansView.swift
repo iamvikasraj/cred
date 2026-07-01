@@ -18,7 +18,7 @@ struct LoansView: View {
             VStack {
                 Text("Loans")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("Loan management and applications")

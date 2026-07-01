@@ -18,7 +18,7 @@ struct WalletView: View {
             VStack {
                 Text("Wallet")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("Manage your wallet and payments")

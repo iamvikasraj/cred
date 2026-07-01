@@ -33,14 +33,14 @@ struct MenuItemView: View {
                 // Text below icon
                 VStack(alignment: .center, spacing: 3) {
                     Text(item.title)
-                        .font(.system(size: 10, weight: .medium, design: .default))
+                        .font(AppSansFont.font(size: 10, weight: .medium))
                         .foregroundColor(.black)
                         .lineLimit(1)
                         .frame(maxWidth: .infinity)
                     
                     if let subtitle = item.subtitle {
                         Text(subtitle)
-                            .font(.system(size: 8, weight: .regular, design: .default))
+                            .font(AppSansFont.font(size: 8, weight: .regular))
                             .foregroundColor(Color(red: 0.52, green: 0.52, blue: 0.52))
                             .lineLimit(1)
                     }

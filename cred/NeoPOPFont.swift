@@ -1,6 +1,7 @@
 import SwiftUI
+import UIKit
 
-/// NeoPOP typography: **Gilroy** (headings, body, caps) and **Cirka** (serif headings).
+/// NeoPOP typography: **BR Firma** (sans) and **Cirka** (serif headings).
 /// Font files live under `Resources/Fonts/` and are listed in `CredFonts.plist` → UIAppFonts.
 /// If a file is missing, `Font.custom` falls back to a system font at runtime.
 enum NeoPOPFont {
@@ -18,6 +19,11 @@ enum NeoPOPFont {
         font(family: .cirka, size: size, weight: weight)
     }
 
+    static func uiFont(family: Family = .gilroy, size: CGFloat, weight: Font.Weight = .regular) -> UIFont {
+        UIFont(name: postScriptName(family: family, weight: weight), size: size)
+            ?? .systemFont(ofSize: size)
+    }
+
     private static func font(family: Family, size: CGFloat, weight: Font.Weight) -> Font {
         let name = postScriptName(family: family, weight: weight)
         return Font.custom(name, size: size)
@@ -28,14 +34,15 @@ enum NeoPOPFont {
         switch family {
         case .gilroy:
             switch weight {
-            case .ultraLight, .thin: return "Gilroy-Thin"
-            case .light: return "Gilroy-Regular"
-            case .regular: return "Gilroy-Regular"
-            case .medium: return "Gilroy-Medium"
-            case .semibold: return "Gilroy-SemiBold"
-            case .bold: return "Gilroy-Bold"
-            case .heavy, .black: return "Gilroy-ExtraBold"
-            default: return "Gilroy-Regular"
+            case .ultraLight: return "BRFirma-ExtraLight"
+            case .thin: return "BRFirma-Thin"
+            case .light: return "BRFirma-Light"
+            case .regular: return "BRFirma-Regular"
+            case .medium: return "BRFirma-Medium"
+            case .semibold: return "BRFirma-SemiBold"
+            case .bold: return "BRFirma-Bold"
+            case .heavy, .black: return "BRFirma-Black"
+            default: return "BRFirma-Regular"
             }
         case .cirka:
             switch weight {

@@ -18,7 +18,7 @@ struct AnalyticsView: View {
             VStack {
                 Text("Analytics")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(AppSansFont.font(size: 34, weight: .bold))
                     .padding()
                 
                 Text("Track your spending and insights")
