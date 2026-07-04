@@ -3,214 +3,131 @@
 //  cred
 //
 //  Data source for menu items - Easy to update content here
-//  To add navigation, pass a router in the action closure
 //
 
 import SwiftUI
 
 struct MenuData {
-    // Helper function to create menu items with router navigation
+    @MainActor
     static func createItems(with router: AppRouter) -> MenuDataWithRouter {
-        return MenuDataWithRouter(router: router)
+        MenuDataWithRouter(router: router)
     }
-    
-    // Popular section items
-    static let popularItems: [MenuItem] = [
-        MenuItem(
-            icon: .sfSymbol("creditcard.fill"),
-            title: "Cards",
-            subtitle: "Manage"
-        ),
-        MenuItem(
-            icon: .sfSymbol("gift.fill"),
-            title: "Rewards",
-            subtitle: "Earn"
-        ),
-        MenuItem(
-            icon: .sfSymbol("wallet.pass.fill"),
-            title: "Wallet",
-            subtitle: "Pay"
-        ),
-        MenuItem(
-            icon: .sfSymbol("chart.line.uptrend.xyaxis"),
-            title: "Analytics",
-            subtitle: "Track"
-        )
-    ]
-    
-    // Finance section items
-    static let financeItems: [MenuItem] = [
-        MenuItem(
-            icon: .sfSymbol("banknote.fill"),
-            title: "Pay Bills",
-            subtitle: nil
-        ),
-        MenuItem(
-            icon: .sfSymbol("chart.pie.fill"),
-            title: "Invest",
-            subtitle: nil
-        ),
-        MenuItem(
-            icon: .sfSymbol("dollarsign.circle.fill"),
-            title: "Loans",
-            subtitle: nil
-        ),
-        MenuItem(
-            icon: .sfSymbol("building.columns.fill"),
-            title: "Banking",
-            subtitle: nil
-        )
-    ]
-    
-    // Settings section items
-    static let settingsItems: [MenuItem] = [
-        MenuItem(
-            icon: .sfSymbol("person.fill"),
-            title: "Profile",
-            subtitle: nil
-        ),
-        MenuItem(
-            icon: .sfSymbol("gearshape.fill"),
-            title: "Settings",
-            subtitle: nil
-        ),
-        MenuItem(
-            icon: .sfSymbol("questionmark.circle.fill"),
-            title: "Help",
-            subtitle: nil
-        ),
-        MenuItem(
-            icon: .sfSymbol("info.circle.fill"),
-            title: "About",
-            subtitle: nil
-        )
-    ]
-    
-    // Example with custom images (if you have them in Assets)
-    static let customItems: [MenuItem] = [
-        MenuItem(
-            icon: .image("vry"),  // Using existing asset
-            title: "Custom",
-            subtitle: "Item"
-        ),
-        // Add more custom items as needed
-    ]
 }
 
-// Helper class to create menu items with router actions
-class MenuDataWithRouter {
+@MainActor
+final class MenuDataWithRouter {
     let router: AppRouter
-    
+
     init(router: AppRouter) {
         self.router = router
     }
-    
-    // Popular items with navigation
-    var popularItemsWithActions: [MenuItem] {
+
+    /// [Figma 155:1890](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=155-1890)
+    var forYouRows: [[MenuItem]] {
         [
-            MenuItem(
-                icon: .sfSymbol("creditcard.fill"),
-                title: "bills & recharges",
-                subtitle: nil,
-                action: { self.router.navigate(to: .cards) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("gift.fill"),
-                title: "pay contacts",
-                subtitle: nil,
-                action: { self.router.navigate(to: .rewards) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("wallet.pass.fill"),
-                title: "house rent",
-                subtitle: nil,
-                action: { self.router.navigate(to: .wallet) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("chart.line.uptrend.xyaxis"),
-                title: "garage",
-                subtitle: nil,
-                action: { self.router.navigate(to: .analytics) }
-            )
+            [
+                item("garage"),
+                item("bills & recharges", lines: ["bills &", "recharges"], icon: "more_bills", iconWidth: 20, iconHeight: 22.5),
+                item("pay contacts", lines: ["pay", "contacts"], icon: "more_pay_contacts", iconWidth: 22.5, iconHeight: 22),
+                item("payment history", lines: ["payment", "history"], icon: "more_payment_history", iconWidth: 14, iconHeight: 16),
+            ],
         ]
     }
-    
-    // Finance items with navigation
-    var financeItemsWithActions: [MenuItem] {
+
+    /// [Figma 159:2153](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=159-2153)
+    var moneyMattersRows: [[MenuItem]] {
         [
-            MenuItem(
-                icon: .sfSymbol("banknote.fill"),
-                title: "money",
-                subtitle: nil,
-                action: { self.router.navigate(to: .payBills) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("chart.pie.fill"),
-                title: "cash",
-                subtitle: nil,
-                action: { self.router.navigate(to: .invest) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("dollarsign.circle.fill"),
-                title: "bank balance",
-                subtitle: nil,
-                action: { self.router.navigate(to: .loans) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("building.columns.fill"),
-                title: "bank accounts",
-                subtitle: nil,
-                action: { self.router.navigate(to: .banking) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("banknote.fill"),
-                title: "gold",
-                subtitle: nil,
-                action: { self.router.navigate(to: .payBills) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("chart.pie.fill"),
-                title: "CIBIL score",
-                subtitle: nil,
-                action: { self.router.navigate(to: .invest) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("dollarsign.circle.fill"),
-                title: "CRED wallet",
-                subtitle: nil,
-                action: { self.router.navigate(to: .loans) }
-            )
+            [
+                item("money", action: { self.router.navigate(to: .payBills) }),
+                item("cash", action: { self.router.navigate(to: .invest) }),
+                item("CIBIL score", icon: "more_cibil", iconWidth: 15, iconHeight: 15, action: { self.router.navigate(to: .analytics) }),
+                item("bank balance", lines: ["bank", "balance"], action: { self.router.navigate(to: .loans) }),
+            ],
+            [
+                item("bank accounts", lines: ["bank", "accounts"], icon: "more_bank_accounts", iconWidth: 14.5, iconHeight: 14.5, action: { self.router.navigate(to: .banking) }),
+                item("gold"),
+                item("silver"),
+                item("fixed deposit", lines: ["fixed", "deposit"]),
+            ],
+            [
+                item("CRED wallet", lines: ["CRED", "wallet"], action: { self.router.navigate(to: .wallet) }),
+            ],
         ]
     }
-    
-    // Settings items with navigation
-    var settingsItemsWithActions: [MenuItem] {
+
+    /// [Figma 159:2195](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=159-2195)
+    var billsRows: [[MenuItem]] {
         [
-            MenuItem(
-                icon: .sfSymbol("person.fill"),
-                title: "Profile",
-                subtitle: nil,
-                action: { self.router.navigate(to: .profile) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("gearshape.fill"),
-                title: "Settings",
-                subtitle: nil,
-                action: { self.router.navigate(to: .settings) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("questionmark.circle.fill"),
-                title: "Help",
-                subtitle: nil,
-                action: { self.router.navigate(to: .help) }
-            ),
-            MenuItem(
-                icon: .sfSymbol("info.circle.fill"),
-                title: "About",
-                subtitle: nil,
-                action: { self.router.navigate(to: .about) }
-            )
+            [
+                item("credit card", action: { self.router.switchTab(to: .cards) }),
+                item("bills & recharges", lines: ["bills &", "recharges"], icon: "more_bills", iconWidth: 20, iconHeight: 22.5),
+                item("house rent"),
+                item("education fees", icon: "more_education", iconWidth: 25, iconHeight: 20.033),
+            ],
+            [
+                item("motor insurance", lines: ["motor", "insurance"]),
+            ],
         ]
+    }
+
+    /// [Figma 159:2322](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=159-2322)
+    var paymentsRows: [[MenuItem]] {
+        [
+            [
+                item("scan & pay", action: { self.router.switchTab(to: .scan) }),
+                item("pay contacts", lines: ["pay", "contacts"], icon: "more_pay_contacts", iconWidth: 22.5, iconHeight: 22),
+            ],
+        ]
+    }
+
+    /// [Figma 159:2343](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=159-2343)
+    var exploreRows: [[MenuItem]] {
+        [
+            [
+                item("shop"),
+                item("garage"),
+                item("gift cards", lines: ["gift", "cards"]),
+            ],
+        ]
+    }
+
+    /// [Figma 159:2365](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=159-2365)
+    var benefitsRows: [[MenuItem]] {
+        [
+            [
+                item("refer", icon: "more_refer", iconWidth: 16, iconHeight: 15.5),
+                item("coins"),
+                item("vouchers"),
+            ],
+        ]
+    }
+
+    /// [Figma 159:2377](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=159-2377)
+    var othersRows: [[MenuItem]] {
+        [
+            [
+                item("support", icon: "more_support", iconWidth: 16, iconHeight: 15.5, action: { self.router.navigate(to: .help) }),
+                item("payment history", lines: ["payment", "history"], icon: "more_payment_history", iconWidth: 14, iconHeight: 16),
+                item("settings", action: { self.router.navigate(to: .settings) }),
+            ],
+        ]
+    }
+
+    private func item(
+        _ title: String,
+        lines: [String]? = nil,
+        icon: String? = nil,
+        iconWidth: CGFloat? = nil,
+        iconHeight: CGFloat? = nil,
+        action: (@MainActor () -> Void)? = nil
+    ) -> MenuItem {
+        MenuItem(
+            title: title,
+            titleLines: lines,
+            iconAssetName: icon,
+            iconWidth: iconWidth,
+            iconHeight: iconHeight,
+            action: action
+        )
     }
 }
-

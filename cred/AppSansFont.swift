@@ -1,12 +1,12 @@
 import SwiftUI
 import UIKit
 
-/// App sans via **BR Firma** (`NeoPOPFont.gilroy`).
+/// App sans via **BR Firma** (`NeoPOPFont.firma`).
 enum AppSansFont {
     static let bodySize: CGFloat = 17
 
     static func font(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        NeoPOPFont.gilroy(size: size, weight: weight)
+        NeoPOPFont.firma(size: size, weight: weight)
     }
 
     static func configureAppearance() {

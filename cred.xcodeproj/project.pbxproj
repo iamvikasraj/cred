@@ -32,6 +32,7 @@
 		771652FF2FEBAF0700F37712 /* BRFirma-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E32FEBAF0700F37712 /* BRFirma-Bold.ttf */; };
 		771653002FEBAF0700F37712 /* BRFirma-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E42FEBAF0700F37712 /* BRFirma-ExtraLight.ttf */; };
 		771653012FEBAF0700F37712 /* BRFirma-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 771652E72FEBAF0700F37712 /* BRFirma-Regular.ttf */; };
+		77AA000000000000000000A3 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 77AA000000000000000000A2 /* SnapshotTesting */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77AA000000000000000000A3 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +191,7 @@
 			);
 			name = credTests;
 			packageProductDependencies = (
+				77AA000000000000000000A2 /* SnapshotTesting */,
 			);
 			productName = credTests;
 			productReference = 326C10F92DA565E00057254D /* credTests.xctest */;
@@ -251,6 +254,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				32DCF4162DC0D6CC0067684F /* XCRemoteSwiftPackageReference "rive-ios" */,
+				77AA000000000000000000A1 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 326C10EC2DA565DE0057254D /* Products */;
@@ -496,7 +500,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
@@ -539,7 +543,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.0;
@@ -700,6 +704,14 @@
 				minimumVersion = 6.8.1;
 			};
 		};
+		77AA000000000000000000A1 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.17.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -707,6 +719,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 32DCF4162DC0D6CC0067684F /* XCRemoteSwiftPackageReference "rive-ios" */;
 			productName = RiveRuntime;
+		};
+		77AA000000000000000000A2 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77AA000000000000000000A1 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

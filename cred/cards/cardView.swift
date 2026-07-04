@@ -145,13 +145,12 @@ struct cardView: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
                                     Spacer(minLength: 40)
-                                    cardDetails()
-                                    cardDetails()
-                                    cardDetails()
-                                    cardDetails()
+                                    ForEach(sampleCards) { card in
+                                        cardDetails(card: card)
+                                    }
                                     Spacer(minLength: 40)
                                 }
-                             
+
                             }
                             .padding(.vertical, 40)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -165,15 +164,15 @@ struct cardView: View {
                                 
                                 
                                 VStack(spacing:20) {
-                                    List()
+                                    CardListRowPlaceholder()
                                     Divider()
-                                    List()
+                                    CardListRowPlaceholder()
                                     Divider()
-                                    List()
+                                    CardListRowPlaceholder()
                                     Divider()
-                                    List()
+                                    CardListRowPlaceholder()
                                     Divider()
-                                    List()
+                                    CardListRowPlaceholder()
                                     Spacer(minLength: 80)
                                 }
                             }
@@ -201,13 +200,27 @@ struct cardView: View {
     cardView()
 }
 
+struct CreditCard: Identifiable {
+    let id: String
+    let issuer: String
+    let lastFour: String
+}
+
+/// Placeholder data until cards come from a real source.
+let sampleCards: [CreditCard] = [
+    CreditCard(id: "hdfc-1", issuer: "HDFC", lastFour: "4521"),
+    CreditCard(id: "icici-1", issuer: "ICICI", lastFour: "0038"),
+    CreditCard(id: "sbi-1", issuer: "SBI", lastFour: "7794"),
+    CreditCard(id: "axis-1", issuer: "Axis", lastFour: "1266"),
+]
+
 struct cardDetails: View {
-    let cardId: String = UUID().uuidString // You can pass actual card ID
-    @EnvironmentObject var router: AppRouter
-    
+    let card: CreditCard
+    @Environment(AppRouter.self) private var router
+
     var body: some View {
         Button(action: {
-            router.navigate(to: .cardDetail(cardId: cardId))
+            router.navigate(to: .cardDetail(cardId: card.id))
         }) {
             HStack(alignment: .center, spacing: 10) {
                 VStack(alignment: .leading, spacing: 21) {
@@ -261,7 +274,8 @@ struct cardDetails: View {
     }
 }
 
-struct List: View {
+/// Wireframe list row. Named to avoid shadowing `SwiftUI.List`.
+struct CardListRowPlaceholder: View {
     var body: some View {
         HStack(alignment: .center, spacing: 11) {
             HStack(alignment: .top, spacing: 10) {

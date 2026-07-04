@@ -1,0 +1,23 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#0F0F0F"/>
+<g id="Frame 1">
+<rect width="393" height="2236" transform="translate(-122 -708)" fill="black"/>
+<g id="Frame 36">
+<path d="M-122 -708H271V1401C271 1407.63 265.627 1413 259 1413H-110C-116.627 1413 -122 1407.63 -122 1401V-708Z" fill="white"/>
+<g id="Frame 38">
+<g id="Frame 24">
+<g id="garage">
+<rect x="-6" y="-5.5" width="120" height="35" rx="17.5" stroke="#C0C0C0" stroke-width="0.5"/>
+<circle id="Ellipse 8" cx="12" cy="12" r="12" fill="url(#paint0_linear_47_159)"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_47_159" x1="12" y1="0" x2="12" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D7DEFF"/>
+<stop offset="1" stop-color="#F1F8FE"/>
+</linearGradient>
+</defs>
+</svg>

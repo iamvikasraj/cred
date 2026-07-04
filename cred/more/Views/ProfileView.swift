@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -38,7 +38,7 @@ struct ProfileView: View {
 #Preview {
     NavigationStack {
         ProfileView()
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 

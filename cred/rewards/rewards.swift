@@ -30,13 +30,13 @@ struct rewards: View {
                                 )
                                 
                                 VStack(alignment: .leading, spacing: 0) {
-                                    Image("Rectangle 27")
-                                      .frame(width: 254, height: 51)
-                                      .background(Color(red: 1, green: 0.92, blue: 0))
-                                    
-                                    Image("Rectangle 28")
-                                      .frame(width: 254, height: 10)
-                                      .background(Color(red: 0.91, green: 0.82, blue: 0))
+                                    Rectangle()
+                                        .fill(Color(red: 1, green: 0.92, blue: 0))
+                                        .frame(width: 254, height: 51)
+
+                                    Rectangle()
+                                        .fill(Color(red: 0.91, green: 0.82, blue: 0))
+                                        .frame(width: 254, height: 10)
                                 }
                                 .padding(.bottom, 60)
                             }

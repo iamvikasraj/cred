@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PayBillsView: View {
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct PayBillsView: View {
 #Preview {
     NavigationStack {
         PayBillsView()
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 

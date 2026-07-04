@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 23.5 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon">
+<g id="Group 1">
+<path id="Vector 2" d="M0.5 8.5V19.5C0.5 21.1569 1.84315 22.5 3.5 22.5H20C21.6569 22.5 23 21.1569 23 19.5V18.5" stroke="var(--stroke-0, black)"/>
+<path id="Vector 3" d="M3.5 12L1 9.5V10" stroke="var(--stroke-0, black)" stroke-width="2"/>
+<path id="Vector 4" d="M20 10.5L22.5 13L22.5 12.5" stroke="var(--stroke-0, black)" stroke-width="2"/>
+</g>
+<g id="Group 2">
+<path id="Vector 2_2" d="M23 14.5L23 3.5C23 1.84315 21.6569 0.500002 20 0.500001L3.5 0.5C1.84315 0.5 0.500001 1.84315 0.500001 3.5L0.500001 4.5" stroke="var(--stroke-0, black)"/>
+</g>
+<path id="Ellipse 6" d="M11.5 12C13.2287 12 14.7693 12.3788 15.8594 12.9658C16.9696 13.5637 17.5 14.3057 17.5 15C17.5 15.6943 16.9696 16.4363 15.8594 17.0342C14.7693 17.6212 13.2287 18 11.5 18C9.77126 18 8.23073 17.6212 7.14062 17.0342C6.03041 16.4363 5.5 15.6943 5.5 15C5.5 14.3057 6.03041 13.5637 7.14062 12.9658C8.23073 12.3788 9.77126 12 11.5 12Z" fill="var(--fill-0, #C2C2C2)" stroke="var(--stroke-0, #252525)"/>
+<circle id="Ellipse 7" cx="11.5" cy="7" r="3" stroke="var(--stroke-0, #252525)"/>
+</g>
+</svg>

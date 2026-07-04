@@ -25,7 +25,10 @@ struct MenuGrid: View {
 }
 
 #Preview {
-    MenuGrid(items: MenuData.popularItems)
-        .padding()
+    MenuGrid(items: [
+        MenuItem(title: "Cards"),
+        MenuItem(title: "Rewards"),
+    ])
+    .padding()
 }
 

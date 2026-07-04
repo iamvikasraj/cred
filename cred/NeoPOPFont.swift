@@ -7,32 +7,51 @@ import UIKit
 enum NeoPOPFont {
 
     enum Family {
-        case gilroy
+        case firma
         case cirka
     }
 
+    static func firma(size: CGFloat, weight: Font.Weight = .regular) -> Font {
+        font(family: .firma, size: size, weight: weight)
+    }
+
+    @available(*, deprecated, renamed: "firma")
     static func gilroy(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        font(family: .gilroy, size: size, weight: weight)
+        firma(size: size, weight: weight)
     }
 
     static func cirka(size: CGFloat, weight: Font.Weight = .regular) -> Font {
         font(family: .cirka, size: size, weight: weight)
     }
 
-    static func uiFont(family: Family = .gilroy, size: CGFloat, weight: Font.Weight = .regular) -> UIFont {
+    static func uiFont(family: Family = .firma, size: CGFloat, weight: Font.Weight = .regular) -> UIFont {
         UIFont(name: postScriptName(family: family, weight: weight), size: size)
             ?? .systemFont(ofSize: size)
     }
 
     private static func font(family: Family, size: CGFloat, weight: Font.Weight) -> Font {
         let name = postScriptName(family: family, weight: weight)
-        return Font.custom(name, size: size)
+        return Font.custom(name, size: size, relativeTo: textStyle(for: size))
     }
 
-    /// Maps SwiftUI weight to NeoPOP’s per-file names (matches CRED’s Gilroy / PPCirka set).
+    /// Maps a design size to the nearest system text style so Dynamic Type scaling applies.
+    private static func textStyle(for size: CGFloat) -> Font.TextStyle {
+        switch size {
+        case ..<12: .caption2
+        case ..<14: .footnote
+        case ..<16: .subheadline
+        case ..<18: .body
+        case ..<21: .title3
+        case ..<26: .title2
+        case ..<32: .title
+        default: .largeTitle
+        }
+    }
+
+    /// Maps SwiftUI weight to per-file PostScript names (BR Firma / PP Cirka).
     private static func postScriptName(family: Family, weight: Font.Weight) -> String {
         switch family {
-        case .gilroy:
+        case .firma:
             switch weight {
             case .ultraLight: return "BRFirma-ExtraLight"
             case .thin: return "BRFirma-Thin"

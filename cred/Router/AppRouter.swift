@@ -8,14 +8,12 @@
 import SwiftUI
 
 // MARK: - Navigation Routes
+
+/// Detail screens pushed onto the navigation stack.
+/// Tab screens are not routes — switch tabs via `AppRouter.switchTab(to:)`.
 enum Route: Hashable {
-    case home
-    case cards
     case cardDetail(cardId: String)
-    case scan
-    case rewards
     case rewardDetail(rewardId: String)
-    case more
     case settings
     case profile
     case wallet
@@ -26,80 +24,56 @@ enum Route: Hashable {
     case banking
     case help
     case about
-    // Add more routes as needed
 }
 
-// MARK: - Router Observable Object
-class AppRouter: ObservableObject {
-    @Published var navigationPath = NavigationPath()
-    @Published var currentRoute: Route?
-    
-    // Navigate to a specific route
+// MARK: - Router
+
+@MainActor
+@Observable
+final class AppRouter {
+    var navigationPath = NavigationPath()
+    var selectedTab: MainView.Tab = .home
+
     func navigate(to route: Route) {
-        // Ensure we're on the main thread
-        if Thread.isMainThread {
-            currentRoute = route
-            navigationPath.append(route)
-        } else {
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else { return }
-                self.currentRoute = route
-                self.navigationPath.append(route)
-            }
-        }
+        navigationPath.append(route)
     }
-    
-    // Navigate back
+
+    /// Switching tabs always returns to the stack root, matching CRED's behavior.
+    func switchTab(to tab: MainView.Tab) {
+        navigateToRoot()
+        selectedTab = tab
+    }
+
     func goBack() {
-        if !navigationPath.isEmpty {
-            navigationPath.removeLast()
-        }
+        guard !navigationPath.isEmpty else { return }
+        navigationPath.removeLast()
     }
-    
-    // Navigate to root
+
     func navigateToRoot() {
         navigationPath.removeLast(navigationPath.count)
-        currentRoute = nil
-    }
-    
-    // Pop to a specific route
-    func popToRoute(_ route: Route) {
-        // Implementation for popping to a specific route
-        // This is a simplified version
-        navigateToRoot()
-        navigate(to: route)
     }
 }
 
 // MARK: - Router View Modifier
+
 struct RouterView: ViewModifier {
     let router: AppRouter
-    
+
     func body(content: Content) -> some View {
         content
             .navigationDestination(for: Route.self) { route in
                 destinationView(for: route)
-                    .environmentObject(router)
+                    .environment(router)
             }
     }
-    
+
     @ViewBuilder
     private func destinationView(for route: Route) -> some View {
         switch route {
-        case .home:
-            HomeView()
-        case .cards:
-            cardView()
         case .cardDetail(let cardId):
             CardDetailView(cardId: cardId)
-        case .scan:
-            scanView()
-        case .rewards:
-            rewards()
         case .rewardDetail(let rewardId):
             RewardDetailView(rewardId: rewardId)
-        case .more:
-            more()
         case .settings:
             SettingsView()
         case .profile:
@@ -129,4 +103,3 @@ extension View {
         modifier(RouterView(router: router))
     }
 }
-

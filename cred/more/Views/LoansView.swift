@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoansView: View {
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct LoansView: View {
 #Preview {
     NavigationStack {
         LoansView()
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 

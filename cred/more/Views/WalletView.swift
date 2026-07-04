@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WalletView: View {
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct WalletView: View {
 #Preview {
     NavigationStack {
         WalletView()
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 

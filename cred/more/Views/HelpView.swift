@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HelpView: View {
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct HelpView: View {
 #Preview {
     NavigationStack {
         HelpView()
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 

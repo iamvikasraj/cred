@@ -1,0 +1,36 @@
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="22" height="22" fill="#0F0F0F"/>
+<g id="Frame 1">
+<rect width="393" height="2236" transform="translate(-22 -1870)" fill="black"/>
+<g id="Frame 36">
+<g clip-path="url(#clip0_47_159)">
+<path d="M-22 -1870H371V239C371 245.627 365.627 251 359 251H-10C-16.6274 251 -22 245.627 -22 239V-1870Z" fill="white"/>
+<g id="Frame 59">
+<g id="Frame 63">
+<g id="Frame 39">
+<g id="Frame 61">
+<g id="Frame 60">
+<g id="Frame 67">
+<path id="Vector 22" d="M4 10.5V9L11.5 4.5L18.5 9V10.5H4Z" stroke="#141414"/>
+<path id="Vector 23" d="M16 10.5V16.5" stroke="#141414"/>
+<path id="Vector 24" d="M14 10.5V16.5" stroke="#141414"/>
+<path id="Vector 25" d="M12 11V17" stroke="#141414"/>
+<path id="Vector 26" d="M10 10.5V16.5" stroke="#141414"/>
+<path id="Vector 27" d="M8 11V17" stroke="#141414"/>
+<path id="Vector 28" d="M6 10.5V16.5" stroke="#141414"/>
+<rect id="Rectangle 12" x="4" y="17" width="14" height="2" stroke="#141414"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_47_159">
+<path d="M-22 -1870H371V239C371 245.627 365.627 251 359 251H-10C-16.6274 251 -22 245.627 -22 239V-1870Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

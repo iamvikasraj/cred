@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnalyticsView: View {
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct AnalyticsView: View {
 #Preview {
     NavigationStack {
         AnalyticsView()
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 

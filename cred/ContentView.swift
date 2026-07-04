@@ -2,8 +2,7 @@ import SwiftUI
 import RiveRuntime
 
 struct MainView: View {
-    @StateObject private var router = AppRouter()
-    @State private var selectedTab: Tab = .home
+    @State private var router = AppRouter()
 
     enum Tab: String, CaseIterable {
         case home, cards, scan, rewards, more
@@ -12,113 +11,102 @@ struct MainView: View {
     var body: some View {
         NavigationStack(path: $router.navigationPath) {
             VStack(spacing: 0) {
-                TabContent(selectedTab: selectedTab)
-                    .environmentObject(router)
+                TabContent()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-                CustomTabBar(selectedTab: $selectedTab)
+                CustomTabBar()
             }
             .withRouter(router)
             .ignoresSafeArea(edges: .bottom)
             .environment(\.font, AppSansFont.font(size: AppSansFont.bodySize))
         }
+        .environment(router)
     }
 }
 
 struct TabContent: View {
-    let selectedTab: MainView.Tab
-    @EnvironmentObject private var router: AppRouter
+    @Environment(AppRouter.self) private var router
 
     var body: some View {
-        Group {
-            switch selectedTab {
-            case .home: HomeView()
-            case .rewards: rewards()
-            case .cards: cardView()
-            case .scan: scanView()
-            case .more: more()
-            }
+        ZStack {
+            pane(.home) { HomeView() }
+            pane(.cards) { cardView() }
+            pane(.scan) { scanView() }
+            pane(.rewards) { rewards() }
+            pane(.more) { more() }
         }
-        .environmentObject(router)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    /// Keeps every tab mounted so scroll positions and view state
+    /// survive tab switches; only the selected pane is visible and hittable.
+    @ViewBuilder
+    private func pane<V: View>(_ tab: MainView.Tab, @ViewBuilder content: () -> V) -> some View {
+        let isSelected = router.selectedTab == tab
+        content()
+            .opacity(isSelected ? 1 : 0)
+            .allowsHitTesting(isSelected)
+            .accessibilityHidden(!isSelected)
     }
 }
 
 struct CustomTabBar: View {
-    @Binding var selectedTab: MainView.Tab
+    @Environment(AppRouter.self) private var router
     @State private var riveViewModel: RiveViewModel?
-
-    private struct HitArea: Identifiable {
-        let tab: MainView.Tab
-        let width: CGFloat
-        let x: CGFloat
-        var id: MainView.Tab { tab }
-    }
-
-    private static let hitAreas: [HitArea] = [
-        HitArea(tab: .home, width: 60, x: -10),
-        HitArea(tab: .cards, width: 60, x: -5),
-        HitArea(tab: .scan, width: 80, x: 0),
-        HitArea(tab: .rewards, width: 60, x: 5),
-        HitArea(tab: .more, width: 60, x: 8),
-    ]
 
     var body: some View {
         ZStack {
-            Rectangle()
-                .frame(height: 135)
-                .background(Color.white).opacity(0)
-                .ignoresSafeArea(edges: .bottom)
-
             if let riveModel = riveViewModel {
                 riveModel.view()
                     .frame(height: 135)
                     .background(Color.clear)
-                    .zIndex(1)
             }
 
-            HStack {
-                ForEach(Self.hitAreas) { area in
+            HStack(spacing: 0) {
+                ForEach(MainView.Tab.allCases, id: \.self) { tab in
                     Button {
-                        if selectedTab != area.tab { selectedTab = area.tab }
+                        router.switchTab(to: tab)
                     } label: {
-                        Rectangle()
-                            .fill(Color.clear)
-                            .frame(width: area.width, height: 80)
+                        Color.clear
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 80)
+                            .contentShape(Rectangle())
                     }
-                    .offset(x: area.x, y: -10)
+                    .accessibilityLabel(Text(tab.rawValue))
+                    .accessibilityAddTraits(router.selectedTab == tab ? .isSelected : [])
                 }
             }
-            .zIndex(2)
+            .padding(.horizontal, 12)
         }
         .frame(height: 100)
         .onAppear(perform: setupRive)
-        .onChange(of: selectedTab) { _, newValue in
+        .onChange(of: router.selectedTab) { _, newValue in
             updateRiveState(for: newValue)
         }
     }
 
     private func setupRive() {
-        if riveViewModel == nil {
-            riveViewModel = RiveViewModel(
-                fileName: "cred",
-                stateMachineName: "nav",
-                autoPlay: true
-            )
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                updateRiveState(for: selectedTab)
-            }
-        } else {
-            updateRiveState(for: selectedTab)
-        }
+        guard !isRunningForPreviews, riveViewModel == nil else { return }
+        riveViewModel = RiveViewModel(
+            fileName: "cred",
+            stateMachineName: "nav",
+            autoPlay: true
+        )
+        updateRiveState(for: router.selectedTab)
     }
 
     private func updateRiveState(for tab: MainView.Tab) {
+        guard !isRunningForPreviews else { return }
         guard let riveModel = riveViewModel else { return }
         for t in MainView.Tab.allCases {
             riveModel.setInput(t.rawValue, value: t == tab)
         }
     }
+}
+
+private var isRunningForPreviews: Bool {
+    ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" ||
+    ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PLAYGROUNDS"] == "1"
 }
 
 #Preview {

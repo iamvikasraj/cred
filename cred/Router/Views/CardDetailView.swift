@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardDetailView: View {
     let cardId: String
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct CardDetailView: View {
 #Preview {
     NavigationStack {
         CardDetailView(cardId: "123")
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 

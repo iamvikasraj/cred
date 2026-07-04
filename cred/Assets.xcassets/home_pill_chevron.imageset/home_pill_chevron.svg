@@ -1,0 +1,41 @@
+<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="17" height="17" fill="#0F0F0F"/>
+<g id="Frame 1">
+<rect width="393" height="2236" transform="translate(-263.625 -401.125)" fill="black"/>
+<g id="Frame 36">
+<g clip-path="url(#clip0_47_159)">
+<path d="M-263.625 -401.125H129.375V1707.88C129.375 1714.5 124.002 1719.88 117.375 1719.88H-251.625C-258.252 1719.88 -263.625 1714.5 -263.625 1707.88V-401.125Z" fill="white"/>
+<g id="Frame 32">
+<g id="Frame 9">
+<g id="Frame 7" filter="url(#filter0_d_47_159)">
+<rect x="-158.625" y="-10.125" width="182" height="36" rx="18" fill="url(#paint0_linear_47_159)"/>
+<rect x="-158.625" y="-10.125" width="182" height="36" rx="18" stroke="#C6C7C7" stroke-width="0.5"/>
+<g id="Frame 73">
+<circle id="Ellipse 3" cx="8.375" cy="8.375" r="8" stroke="#E8E8E8" stroke-width="0.75"/>
+<path id="Explore" d="M6.375 5.375L9.375 7.875L6.375 10.375" stroke="black" stroke-width="1.25" stroke-linecap="square"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_47_159" x="-158.875" y="-10.375" width="182.5" height="38.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_47_159"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_47_159" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear_47_159" x1="-67.625" y1="-10.125" x2="-67.625" y2="25.875" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FDFDFD"/>
+<stop offset="1" stop-color="#F5F6F6"/>
+</linearGradient>
+<clipPath id="clip0_47_159">
+<path d="M-263.625 -401.125H129.375V1707.88C129.375 1714.5 124.002 1719.88 117.375 1719.88H-251.625C-258.252 1719.88 -263.625 1714.5 -263.625 1707.88V-401.125Z" fill="white"/>
+</clipPath>
+</defs>
+</svg>

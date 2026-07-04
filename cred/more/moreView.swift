@@ -7,166 +7,97 @@
 
 import SwiftUI
 
+/// [Figma 157:2081](https://www.figma.com/design/8Em1u56aZPgb46USBkO9Jj/CRED?node-id=157-2081)
 struct more: View {
-    @EnvironmentObject var router: AppRouter
-    
-    // Create menu data with router actions
-    private var menuData: MenuDataWithRouter {
-        MenuData.createItems(with: router)
-    }
-    
+    @Environment(AppRouter.self) private var router
+
+    /// Built once on first appearance; rebuilding per body evaluation would
+    /// recreate every menu action closure on each render.
+    @State private var menuData: MenuDataWithRouter?
+
     var body: some View {
-        ZStack {
-            // Black background for the entire view
-            Color.black
-                .ignoresSafeArea() // This ignores all safe areas
-            
-            GeometryReader { geometry in
-                VStack {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        VStack(alignment: .trailing, spacing: 52) {
-                            
-                                //top navigation section
-                                HStack(alignment: .bottom) {
-                                    VStack(alignment: .leading, spacing: 13) {
-                                        VStack(alignment: .leading, spacing: 10) {
-                                            
-                                        }
-                                        .padding(0)
-                                        .frame(width: 61, height: 16, alignment: .topLeading)
-                                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                        
-                                        VStack(alignment: .leading, spacing: 10) {
-                                            
-                                        }
-                                        .padding(0)
-                                        .frame(maxWidth: .infinity, minHeight: 26, maxHeight: 26, alignment: .topLeading)
-                                        .background(Color(red: 0.85, green: 0.85, blue: 0.85))
-                                    }
-                                    .padding(0)
-                                    .frame(width: 91, alignment: .topLeading)
-                                    
-                                    Spacer()
-                                    
-                                    HStack(alignment: .bottom, spacing: 10) {
-                                        HStack(alignment: .center, spacing: 10) {
-                                            
-                                        }
-                                        .padding(0)
-                                        .frame(width: 40, height: 40, alignment: .leading)
-                                        .background(.white)
-                                        .cornerRadius(60)
-                                        .overlay(
-                                          RoundedRectangle(cornerRadius: 60)
-                                            .inset(by: 0.25)
-                                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 1)
-                                        )
-                                        
-                                        HStack(alignment: .top, spacing: 10) {
-                                            
-                                        }
-                                        .padding(10)
-                                        .frame(width: 104, height: 41, alignment: .topLeading)
-                                        .background(.white)
-                                        .cornerRadius(60)
-                                        .overlay(
-                                          RoundedRectangle(cornerRadius: 60)
-                                            .inset(by: 0.25)
-                                            .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 1)
-                                        )
-                                    }
-                                    .padding(0)
-                                }
-                                .padding(0)
-                                .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                                
-                                
-                                // Popular section
-                                VStack(alignment: .center, spacing: 60) {
-                                    VStack(alignment: .leading, spacing: 20) {
-                                        SectionHeader(title: "Popular")
-                                        
-                                        // First row of popular items with navigation
-                                        MenuGrid(items: Array(menuData.popularItemsWithActions.prefix(4)))
-                                        
-                                        // Second row of popular items (if more than 4)
-                                        if menuData.popularItemsWithActions.count > 4 {
-                                            MenuGrid(items: Array(menuData.popularItemsWithActions.dropFirst(4).prefix(4)))
-                                        }
-                                    }
-                                    .padding(0)
-                                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                                }
-                                .padding(0)
-                                .frame(maxWidth: .infinity, alignment: .top)
-                                
-                                // Banner design for the card
-                                bannerview()
-                                
-                                // Finance section
-                                VStack(alignment: .center, spacing: 60) {
-                                    VStack(alignment: .leading, spacing: 20) {
-                                        SectionHeader(title: "Money MAtters")
-                                        
-                                        MenuGrid(items: Array(menuData.financeItemsWithActions.prefix(4)))
-                                    }
-                                    .padding(0)
-                                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                                    
-                                }
-                                .padding(0)
-                                .frame(maxWidth: .infinity, alignment: .top)
-                                
-                                VStack(alignment: .leading, spacing: 20) {
-                                    SectionHeader(title: "Bills")
-                                    
-                                    MenuGrid(items: Array(menuData.settingsItemsWithActions.prefix(7)))
-                                }
-                                .padding(0)
-                                .frame(maxWidth: .infinity, alignment: .topLeading)
-                            
-                            }
-                            .padding(.horizontal, 24)
-                            .padding(.vertical, 80)
-                            
-                            Spacer() // Pushes content up
-                        }
-                        .frame(minHeight: geometry.size.height - 22) // Ensure VStack fills ScrollView minus padding
-                        .padding(.top, 20)
+        TabScreenShell(background: Color(red: 254 / 255, green: 255 / 255, blue: 255 / 255)) { width in
+            let metrics = MoreMetrics(containerWidth: width)
+
+            VStack(spacing: 0) {
+                MoreSearchHeader(metrics: metrics)
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, metrics.searchHorizontalInset)
+                    .padding(.top, metrics.topPadding)
+
+                if let menuData {
+                    moreScrollContent(menuData: menuData, metrics: metrics)
                         .frame(maxWidth: .infinity)
-                    }
-                    .background(Color.white)
-                    .cornerRadius(20)
+                        .padding(.horizontal, metrics.horizontalInset)
+                        .padding(.bottom, metrics.scrollBottomInset)
                 }
-                .ignoresSafeArea(.container, edges: .all)
-                .padding(.bottom, 11) // This specifically ignores the top safe area
+            }
+        }
+        .onAppear {
+            if menuData == nil {
+                menuData = MenuData.createItems(with: router)
             }
         }
     }
 
+    @ViewBuilder
+    private func moreScrollContent(menuData: MenuDataWithRouter, metrics: MoreMetrics) -> some View {
+        VStack(alignment: .leading, spacing: metrics.sectionSpacing) {
+            MoreMenuSection(
+                title: "FOR YOU",
+                rows: menuData.forYouRows,
+                metrics: metrics
+            )
 
+            MorePromoBanner(metrics: metrics)
 
+            MoreMenuSection(
+                title: "MONEY MATTERS",
+                rows: menuData.moneyMattersRows,
+                metrics: metrics,
+                usesFlexColumns: true
+            )
 
-#Preview {
-    more()
-        .environmentObject(AppRouter())
-}
+            MoreMenuSection(
+                title: "BILLS",
+                rows: menuData.billsRows,
+                metrics: metrics,
+                usesFlexColumns: true
+            )
 
-struct bannerview: View {
-    var body: some View {
-        HStack(alignment: .center, spacing: 10) {
-            
+            MoreMenuSection(
+                title: "PAYMENTS",
+                rows: menuData.paymentsRows,
+                metrics: metrics,
+                rowSideInset: metrics.menuRowSideInset
+            )
+
+            MoreMenuSection(
+                title: "EXPLORE",
+                rows: menuData.exploreRows,
+                metrics: metrics,
+                rowSideInset: metrics.menuRowSideInset
+            )
+
+            MoreMenuSection(
+                title: "BENEFITS",
+                rows: menuData.benefitsRows,
+                metrics: metrics,
+                rowSideInset: metrics.menuRowSideInset
+            )
+
+            MoreMenuSection(
+                title: "OTHERS",
+                rows: menuData.othersRows,
+                metrics: metrics,
+                rowSideInset: metrics.menuRowSideInset
+            )
         }
-        .padding(0)
-        .frame(maxWidth: .infinity, minHeight: 85, maxHeight: 85, alignment: .leading)
-        .background(.gray)
-        .cornerRadius(10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .inset(by: 0.25)
-                .stroke(Color(red: 0.9, green: 0.9, blue: 0.9), lineWidth: 0.5)
-        )
+        .frame(width: metrics.contentWidth, alignment: .leading)
     }
 }
 
-
+#Preview {
+    more()
+        .environment(AppRouter())
+}

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RewardDetailView: View {
     let rewardId: String
-    @EnvironmentObject var router: AppRouter
+    @Environment(AppRouter.self) private var router
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct RewardDetailView: View {
 #Preview {
     NavigationStack {
         RewardDetailView(rewardId: "456")
-            .environmentObject(AppRouter())
+            .environment(AppRouter())
     }
 }
 
